@@ -40,7 +40,7 @@ gem 'feedbag'
 
 gem 'rest-client'
 
-gem 'feedjira', git: 'git@github.com:feedjira/feedjira.git'
+gem 'feedjira', git: 'https://github.com/feedjira/feedjira.git'
 
 gem 'bootstrap-sass'
 
@@ -54,19 +54,17 @@ gem 'therubyracer'
 
 gem 'font-awesome-rails'
 
-gem 'exception_notification', git: 'git@github.com:nzaillian/exception_notification.git', require: 'exception_notifier'
-
 gem 'formtastic', git: 'https://github.com/justinfrench/formtastic.git'
 
 gem 'formtastic-bootstrap', git: 'https://github.com/mjbellantoni/formtastic-bootstrap'
 
 gem 'friendly_id'
 
-gem 'delayed_job', git: 'git@github.com:collectiveidea/delayed_job.git'
+gem 'delayed_job', git: 'https://github.com/collectiveidea/delayed_job.git'
 
 gem 'daemons'
 
-gem 'delayed_job_active_record', git: 'git@github.com:collectiveidea/delayed_job_active_record.git'
+gem 'delayed_job_active_record', git: 'https://github.com/collectiveidea/delayed_job_active_record.git'
 
 gem 'whenever', require: false
 

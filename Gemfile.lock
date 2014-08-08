@@ -1,12 +1,12 @@
 GIT
-  remote: git@github.com:collectiveidea/delayed_job.git
-  revision: 628081340c942b978e522b2cfe7a83cc122e9867
+  remote: https://github.com/collectiveidea/delayed_job.git
+  revision: 6fc9000bc0e1e56d0781468ccdddcd61e6d5b7ae
   specs:
     delayed_job (4.0.2)
       activesupport (>= 3.0, < 4.2)
 
 GIT
-  remote: git@github.com:collectiveidea/delayed_job_active_record.git
+  remote: https://github.com/collectiveidea/delayed_job_active_record.git
   revision: c640650df5253cc9595f5c42ebfa7a30c3e8c2f3
   specs:
     delayed_job_active_record (4.0.1)
@@ -14,19 +14,13 @@ GIT
       delayed_job (>= 3.0, < 4.1)
 
 GIT
-  remote: git@github.com:feedjira/feedjira.git
+  remote: https://github.com/feedjira/feedjira.git
   revision: e0c605ec071c1bf5dcd4d9ea6b36a61710301188
   specs:
     feedjira (1.3.1)
       curb (~> 0.8.1)
       loofah (~> 2.0.0)
       sax-machine (~> 0.2.1)
-
-GIT
-  remote: git@github.com:nzaillian/exception_notification.git
-  revision: 192a49a02d63d28b23ed41cebadfedd490929cf1
-  specs:
-    exception_notification (1.0.0)
 
 GIT
   remote: https://github.com/justinfrench/formtastic.git
@@ -41,6 +35,12 @@ GIT
   specs:
     formtastic-bootstrap (3.0.0)
       formtastic (>= 2.2)
+
+GIT
+  remote: https://github.com/nzaillian/exception_notification.git
+  revision: 192a49a02d63d28b23ed41cebadfedd490929cf1
+  specs:
+    exception_notification (1.0.0)
 
 GEM
   remote: https://rubygems.org/
