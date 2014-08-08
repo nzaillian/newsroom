@@ -18,3 +18,5 @@
 /tmp
 
 /config/secrets.yml
+
+/config/deploy.rb
