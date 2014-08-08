@@ -20,3 +20,4 @@ production:
   username: <%= ENV['DB_USER'] || Rails.application.secrets.db_user %>
   password: <%= ENV['DB_PASSWORD'] || Rails.application.secrets.db_password %>
   timeout: 10000
+  host: localhost
