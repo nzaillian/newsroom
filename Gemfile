@@ -30,6 +30,8 @@ gem 'spring',        group: :development
 
 gem 'pg'
 
+gem 'dalli'
+
 gem 'kaminari'
 
 gem 'kaminari-bootstrap'
