@@ -1,0 +1,11 @@
+= semantic_form_for @feed do |f|
+  = f.semantic_errors
+  
+  = f.inputs do
+    = f.input :url, as: :string, label: 'Feed URL'
+    
+    - if @feed.persisted?
+      = f.input :name, as: :string
+
+  = f.actions do
+    = f.action :submit, label: (@feed.new_record? ? 'Add' : 'Save'), button_html: {class: 'btn btn-success pull-right', data: {disable_with: 'Loading...'}}

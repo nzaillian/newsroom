@@ -1,0 +1,57 @@
+//= require ./lib/manifest
+//= require ./ui
+//= require ./users
+//= require ./feeds
+//= require ./stories
+//= require_self
+
+@import 'common/palette'
+@import 'bootstrap/mixins'
+
+body
+  border-top: 5px solid $brand-success
+
+.container
+  max-width: 840px
+
+.handwritten
+  font-family: 'Just Another Hand', cursive
+
+#navigation
+  padding-top: 14px  
+
+#main
+  padding-bottom: 40px  
+
+.box
+  background: #fff
+  border: 1px solid #ccc
+  border-radius: 3px
+  padding: 12px
+
+.alert.flash
+  margin-top: 20px
+
+ul.newsroom-list
+  margin-top: 18px
+
+  li
+    margin-bottom: 8px
+    background: #fff
+    padding: 8px 12px
+    box-shadow: 0 0 5px rgba(0,0,0,0.15)
+    border-radius: 3px
+
+    a
+      color: #000
+
+ul.clickable-items
+  li
+    cursor: pointer
+  
+  a:hover
+    text-decoration: none
+
+.hide-text-overflow
+  +text-overflow
+  display: inline-block

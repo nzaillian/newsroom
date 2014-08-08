@@ -1,0 +1,30 @@
+- if flash && (flash[:notice].present? || flash[:alert].present? || flash[:warning].present? || flash[:validation_errors].present?)
+  .row
+    .col-md-12
+      -if flash and flash[:notice].present?
+        .alert.alert-success.flash
+          %a{:class => 'close', :data => {:dismiss => 'alert', :target => ".alert-row"}}
+            &times;
+          .inner-text
+            =flash[:notice]
+
+      -if flash and flash[:alert].present?
+        .alert.alert-danger.flash
+          %a{:class => 'close', :data => {:dismiss => 'alert', :target => ".alert-row"}}
+            &times;
+          .inner-text
+            =flash[:alert]
+
+      -if flash and flash[:warning].present?
+        .alert.alert-danger.flash
+          %a{:class => 'close', :data => {:dismiss => 'alert', :target => ".alert-row"}}
+            &times;
+          .inner-text
+            =flash[:warning]
+
+      -if flash and flash[:validation_errors].present?
+        .alert.alert-danger.flash.validation-errors
+          %a{:class => 'close', :data => {:dismiss => 'alert', :target => ".alert-row"}}
+            &times;
+          .inner-text
+            =flash[:validation_errors]  

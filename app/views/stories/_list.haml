@@ -1,0 +1,13 @@
+%ul.list-unstyled.newsroom-list.clickable-items.stories
+  - @stories.each do |story|
+    - cache story do
+      %li.story{class: story_classes(story), data: {id: story.id}}
+        = render partial: '/stories/summary', locals: {story: story}
+
+  -# to commit "read/unread" state for back-button navigation
+  -# http://stackoverflow.com/questions/16431164/preserve-dynamically-changed-html-on-back-button
+  = form_tag do
+    = hidden_field_tag 'read_stories', @stories.read.pluck(:id).to_json
+
+.pagination-wrap.text-center
+  = paginate @stories                  

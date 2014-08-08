@@ -1,0 +1,24 @@
+- cache @story do
+  #story.box
+    .header
+      = render partial: 'summary', locals: {story: @story}
+
+
+    %h1.title= link_to @story.title, @story.permalink
+
+    .body
+      = @story.body.html_safe
+
+    .footer
+      .row
+        .col-xs-4.text-left.text-muted
+          %span.published
+            Published
+            = @story.published.try(:to_s, :slashes_with_time)
+
+        .col-xs-8.text-right.text-muted
+          = form_for @story, html: {class: 'keep-unread-form'} do |f|
+            %label
+              = f.hidden_field :is_read, value: true
+              = f.check_box :keep_unread, class: 'keep-unread-checkbox'
+              %span.text Keep Unread

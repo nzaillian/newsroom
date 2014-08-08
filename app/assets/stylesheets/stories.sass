@@ -1,0 +1,88 @@
+@import 'common/common'
+
+ul.stories
+  li.story
+    &.read
+      opacity: 0.68
+
+    &.starred, &.starred.read
+      font-weight: 700
+      opacity: 1
+
+.star-form
+  margin: 0
+  padding: 0
+  display: inline-block
+
+  .star-story
+    margin-right: 4px
+    color: #ccc
+
+    .starred-icon
+      display: none
+
+    &.starred
+      color: #FFD900
+
+      .starred-icon
+        display: inline-block
+      
+      .unstarred-icon
+        display: none
+
+#story
+  margin: 12px 0
+  padding: 0 20px
+
+  .header, .footer
+    line-height: 28px
+
+  .header
+    border-bottom: 2px solid #ccc
+    margin: 8px 0 14px 0
+
+  .footer
+    border-top: 2px solid #ccc
+    margin: 10px 0 0 0
+    font-size: 14px
+    font-weight: 400
+
+
+    .keep-unread-form
+      margin: 0
+      padding: 0
+      display: inline-block
+
+      label
+        font-weight: 400
+        position: relative
+        margin-right: 10px
+
+        input
+          position: absolute
+          display: block
+          top: 6px
+        
+        .text
+          display: inline-block
+          padding: 2px 0 0 18px
+
+
+  
+  .title
+    margin: 0 0 18px 0
+    font-size: 28px
+    font-weight: 700
+
+    a, a:hover, a:visited
+      color: $dark-gray
+      text-decoration: none
+
+  .body
+    font-size: 16.5px
+    line-height: 1.6
+
+    img
+      display: block
+      max-width: 100%
+      margin: 0 0 14px 0

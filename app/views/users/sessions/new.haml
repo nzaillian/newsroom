@@ -1,0 +1,12 @@
+%h1.handwritten.text-center.session-head
+  Sign Into Your Account!
+
+.row
+  .col-md-6.col-md-offset-3
+    .session-box.box
+      = semantic_form_for @user, url: user_session_path, method: :post do |f|
+        = f.inputs do
+          = f.input :password, label: 'Your Password'
+
+        = f.actions do
+          = f.action :submit, label: 'Sign In', button_html: {class: 'btn btn-success pull-right', data: {disable_with: 'Loading...'}}

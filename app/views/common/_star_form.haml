@@ -1,0 +1,7 @@
+= form_for story, html: {class: 'star-form'} do |f|
+  .hidden
+    = f.check_box :starred, class: 'starred-checkbox'
+
+  = link_to nil, href: '#', class: "star-story#{' starred' if story.starred}", title: 'Star this story', data: {toggle: 'tooltip', placement: tooltip_position, container: 'body'} do
+    %i.fa.fa-star.starred-icon
+    %i.fa.fa-star-o.unstarred-icon

@@ -1,0 +1,14 @@
+.row.story-summary
+  .col-xs-3.hide-text-overflow
+    %span
+      = render partial: '/common/star_form', locals: {story: story, tooltip_position: 'left'}
+      
+      %span.feed-title= story.feed.name
+
+  .col-xs-9.hide-text-overflow
+    %span
+      = link_to nil, href: story_path(story), class: 'click-target' do
+        = truncate(story.title, length: 80)
+        %span.text-muted.story-preview
+          &mdash;
+          = truncate(strip_tags(story.body), length: 80)

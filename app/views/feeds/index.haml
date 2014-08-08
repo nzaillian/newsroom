@@ -1,0 +1,27 @@
+%ul.list-unstyled.newsroom-list.clickable-items.feeds
+  - @feeds.each do |feed|
+    %li
+      .row
+        .col-xs-7
+          - if feed.status == 'red'
+            %i.fa.fa-circle.status.text-danger{data: {toggle: 'tooltip', title: 'Last Fetch: Failed', placement: 'left', container: 'body'}}
+          - elsif feed.status == 'green'
+            %i.fa.fa-circle.status.text-success{data: {toggle: 'tooltip', title: 'Last Fetch: Succeded', placement: 'left', container: 'body'}}
+          = link_to feed.name, feed_path(feed), class: 'click-target'
+
+        .col-xs-3
+          %small.last-fetched-label Last Updated:
+          %span.last-fetched= feed.last_fetched.try(:to_s, :short)
+
+        .col-xs-2.feed-actions.text-right
+          = link_to nil, href: feed.url, class: 'text-success', title: 'Open In New Tab', target: '_blank', data: {toggle: 'tooltip', placement: 'top', container: 'body'} do
+            %i.fa.fa-external-link
+
+          = link_to nil, href: edit_feed_path(feed), class: 'text-success', title: 'Edit Feed Settings', data: {toggle: 'tooltip', placement: 'top', container: 'body'} do
+            %i.fa.fa-edit
+
+          = link_to nil, href: feed_path(feed), class: 'text-success', title: 'Delete Feed', data: {method: :delete, confirm: 'Are you sure you want to remove this feed?', toggle: 'tooltip', placement: 'top', container: 'body'} do
+            %i.fa.fa-times                        
+
+.pagination-wrap.text-center
+  = paginate @feeds            

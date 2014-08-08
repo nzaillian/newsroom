@@ -1,0 +1,13 @@
+%h1.handwritten.text-center.session-head
+  Set your password!
+
+.row
+  .col-md-6.col-md-offset-3
+    .session-box.box
+      = semantic_form_for @user, url: users_password_path(@user) do |f|
+        = f.inputs do
+          = f.input :password
+          = f.input :password_confirmation
+
+        = f.actions do
+          = f.action :submit, label: 'Set My Password', button_html: {class: 'btn btn-success pull-right'}

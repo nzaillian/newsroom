@@ -1,0 +1,20 @@
+- if user_signed_in?
+  .container
+    #navigation
+      .pull-left.text-left
+        = yield :nav_left
+        = link_to nil, href: refresh_stories_path, id: 'refresh-feeds', class: 'btn btn-success', title: 'Refresh Feeds', data: {method: :post, toggle: 'tooltip', placement: 'bottom'} do
+          %i.fa.fa-refresh
+
+      .pull-right.text-right
+        = link_to nil, href: stories_path, class: 'btn btn-success', title: 'All Articles', data: {toggle: 'tooltip', placement: 'bottom'} do
+          %i.fa.fa-list
+
+        = link_to nil, href: stories_path(filters: {starred: true}), class: 'btn btn-success', title: 'View Starred Articles', data: {toggle: 'tooltip', placement: 'bottom'} do
+          %i.fa.fa-star          
+        
+        = link_to nil, href: feeds_path, class: 'btn btn-success', title: 'Manage Feeds', data: {toggle: 'tooltip', placement: 'bottom'} do
+          %i.fa.fa-pencil
+
+        = link_to nil, href: new_feed_path, class: 'btn btn-success', title: 'Add New Feed', data: {toggle: 'tooltip', placement: 'bottom'} do
+          %i.fa.fa-plus
