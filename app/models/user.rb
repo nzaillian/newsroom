@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
   private
 
   def only_one
-    if (self.class.count > 0 && User.all.pluck(:id) != [id])
+    if (User.count > 0 && User.all.pluck(:id) != [id])
       self.errors[:base] << "Attempt to create second user account"
     end
   end

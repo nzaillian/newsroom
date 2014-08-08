@@ -3,6 +3,9 @@ class Feed
     extend ActiveSupport::Concern
 
     included do
+      # see app/models/concerns/feed/discovery.rb
+      before_save :derive_feed_details, if: ->{ url_changed? }
+      
       def discover_feed(site_url)
         urls = Feedbag.find(site_url)
 

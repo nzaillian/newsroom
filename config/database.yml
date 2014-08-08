@@ -1,22 +1,22 @@
 development:
   adapter: postgresql
-  database: <%= Rails.application.secrets.db_name %> 
-  username: <%= Rails.application.secrets.db_user %>
-  password: <%= Rails.application.secrets.db_password %>
+  database: <%= ENV['DB_NAME'] || Rails.application.secrets.db_name %> 
+  username: <%= ENV['DB_USER'] || Rails.application.secrets.db_user %>
+  password: <%= ENV['DB_PASSWORD'] || Rails.application.secrets.db_password %>
   host: localhost
   timeout: 10000
 
 test:
   adapter: postgresql
-  database: <%= Rails.application.secrets.db_name %> 
-  username: <%= Rails.application.secrets.db_user %>
-  password: <%= Rails.application.secrets.db_password %>
+  database: <%= ENV['DB_NAME'] || Rails.application.secrets.db_name %> 
+  username: <%= ENV['DB_USER'] || Rails.application.secrets.db_user %>
+  password: <%= ENV['DB_PASSWORD'] || Rails.application.secrets.db_password %>
   host: localhost
   timeout: 10000
 
 production:
   adapter: postgresql
-  database: <%= Rails.application.secrets.db_name %> 
-  username: <%= Rails.application.secrets.db_user %>
-  password: <%= Rails.application.secrets.db_password %>
+  database: <%= ENV['DB_NAME'] || Rails.application.secrets.db_name %> 
+  username: <%= ENV['DB_USER'] || Rails.application.secrets.db_user %>
+  password: <%= ENV['DB_PASSWORD'] || Rails.application.secrets.db_password %>
   timeout: 10000
