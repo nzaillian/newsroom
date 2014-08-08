@@ -36,12 +36,6 @@ GIT
     formtastic-bootstrap (3.0.0)
       formtastic (>= 2.2)
 
-GIT
-  remote: https://github.com/nzaillian/exception_notification.git
-  revision: 192a49a02d63d28b23ed41cebadfedd490929cf1
-  specs:
-    exception_notification (1.0.0)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -221,7 +215,6 @@ DEPENDENCIES
   delayed_job!
   delayed_job_active_record!
   devise
-  exception_notification!
   feedbag
   feedjira!
   font-awesome-rails
