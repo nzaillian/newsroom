@@ -82,6 +82,7 @@ GEM
     columnize (0.8.9)
     curb (0.8.6)
     daemons (1.1.9)
+    dalli (2.7.2)
     debugger (1.6.8)
       columnize (>= 0.3.1)
       debugger-linecache (~> 1.2.0)
@@ -210,6 +211,7 @@ DEPENDENCIES
   cancan
   coffee-rails (~> 4.0.0)
   daemons
+  dalli
   debugger
   delayed_job!
   delayed_job_active_record!
