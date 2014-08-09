@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   end
 
   def password_required?
-    false
+    persisted?
   end
 
   def self.instance
