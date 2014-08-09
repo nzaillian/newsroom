@@ -1,6 +1,8 @@
 class Users::PasswordsController < ApplicationController
   before_filter :find_user
 
+  before_filter :bounce_if_password_set
+
   def new
   end
 
@@ -21,5 +23,11 @@ class Users::PasswordsController < ApplicationController
 
   def user_params
     params.permit(user: [:password, :password_confirmation])[:user]
+  end
+
+  def bounce_if_password_set
+    if @user.encrypted_password.present?
+      redirect_to(root_path) and return
+    end
   end
 end
