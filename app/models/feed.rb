@@ -11,6 +11,9 @@ class Feed < ActiveRecord::Base
 
   after_initialize :init
 
+  # see app/models/concerns/feed/discovery.rb
+  before_save :derive_feed_details, if: ->{ url_changed? }  
+
   private
 
   def latest_entry_id

@@ -9,7 +9,7 @@ cache ['rss', @stories.first] do
         xml.item {
           xml.guid(story.uuid)
           xml.pubDate(story.published.to_s(:rfc822))
-          xml.title(story.title)
+          xml.title("#{truncate(story.feed.name, lenth: 24)} | #{story.title}")
           xml.link(story.permalink)
           xml.description(story.body)
         }
