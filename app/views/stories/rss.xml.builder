@@ -8,7 +8,7 @@ cache ['rss', @stories.first] do
       @stories.each do |story|
         xml.item {
           xml.guid(story.uuid)
-          xml.pubdata(story.published.to_s(:rfc822))
+          xml.pubDate(story.published.to_s(:rfc822))
           xml.title(story.title)
           xml.link(story.permalink)
           xml.description(story.body)
