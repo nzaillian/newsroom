@@ -47,5 +47,9 @@ To run Newsroom on a VPS or dedicated server, I recommend using [Phusion Passeng
 
 Note that the production configuration uses memcached heavily. You will want to make sure to install memcached on your VPS or dedicated server to maximize performance. The configuration in config/environments/production.rb assumes the default memcached host/port (localhost:11211).
 
+## Mobile/Desktop Readers
+
+Newsroom makes a consolidated RSS feed available at a secret path (ex: reader.yourdomain.com/feed/\<secure hex token\>/rss.xml). To grab the URL of this consolidated feed navigate to the "/info" page (or click the "info" button on the upper right once logged in).
+
 ### Thanks
 This project borrows some code from the [Stringer](https://github.com/swanson/stringer) app. It was initially conceived as a performance-oriented re-implementation of Stringer in idiomatic Rails. It has deviated enough from Stringer that that is no longer a helpful way to frame the project.
