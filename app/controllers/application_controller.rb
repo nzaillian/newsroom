@@ -32,7 +32,7 @@ class ApplicationController < ActionController::Base
   end
 
   def bounce_anonymous
-    if !controller?('users/passwords', 'users/sessions') && !user_signed_in?
+    if !(controller?('users/passwords', 'users/sessions') || action?('rss')) && !user_signed_in?
       if User.instance.encrypted_password.blank?
         redirect_to(new_users_password_path) and return
       else

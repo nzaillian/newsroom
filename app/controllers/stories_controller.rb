@@ -1,5 +1,9 @@
 class StoriesController < ApplicationController
+  include Common::ApiAuthentication
+
   before_filter :find_story, only: member_actions
+
+  before_filter :authenticate_api_user!, only: :rss
 
   handles_sortable_columns
 
@@ -7,6 +11,12 @@ class StoriesController < ApplicationController
 
   def index
     @stories = Story.filter(filter_params).with_feeds.order(sort_order).page(page_param)
+  end
+
+  def rss
+    @stories = Story.with_feeds.order('stories.published DESC').limit(100)
+
+    render 'rss.xml', layout: false
   end
 
   def show

@@ -1,0 +1,12 @@
+.breaker.lg
+.row.col-xs-10.col-xs-offset-1
+  .box.text-center
+    %h2 App Info
+
+    %p
+      Your private RSS feed (for use with desktop/mobile RSS readers) is available at:
+
+      %br
+      %br
+
+      %strong= rss_path(User.instance.api_key, only_path: false)
