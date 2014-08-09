@@ -7,6 +7,10 @@ class User < ActiveRecord::Base
     false
   end
 
+  def password_required?
+    false
+  end
+
   def self.instance
     @instance ||= (User.first || User.create!)
   end  
