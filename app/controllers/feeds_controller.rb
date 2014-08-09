@@ -39,7 +39,7 @@ class FeedsController < ApplicationController
   def destroy
     @feed.destroy
 
-    redirect_to feeds_path
+    redirect_to feeds_path, flash: {notice: "Feed \"#{@feed.name}\" successfully deleted."}
   end
 
   private

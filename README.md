@@ -43,7 +43,7 @@ To run locally:
 
 ## VPS/Dedicated Server
 
-To run Newsroom on a VPS or dedicated server (recommended), I recommend using [Phusion Passenger](https://www.phusionpassenger.com/). Because this is a very straightforward and idiomatic Rails application with no arcane dependencies it is relatively easy to set up with the standard Passenger configuration.
+To run Newsroom on a VPS or dedicated server, I recommend using [Phusion Passenger](https://www.phusionpassenger.com/). Because this is a very straightforward and idiomatic Rails application with no arcane dependencies it is relatively easy to set up with the standard Passenger configuration.
 
 Note that the production configuration uses memcached heavily. You will want to make sure to install memcached on your VPS or dedicated server to maximize performance. The configuration in config/environments/production.rb assumes the default memcached host/port (localhost:11211).
 

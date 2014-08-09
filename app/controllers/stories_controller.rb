@@ -3,6 +3,8 @@ class StoriesController < ApplicationController
 
   handles_sortable_columns
 
+  helper_method :filter_params
+
   def index
     @stories = Story.filter(filter_params).with_feeds.order(sort_order).page(page_param)
   end
@@ -22,7 +24,7 @@ class StoriesController < ApplicationController
   def refresh
     Feed.fetch_all!
 
-    redirect_to stories_path
+    redirect_to stories_path, flash: {notice: "Feeds refreshed"}
   end
 
   private

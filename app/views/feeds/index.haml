@@ -1,4 +1,12 @@
 %ul.list-unstyled.newsroom-list.clickable-items.feeds
+  - if @feeds.empty?
+    .breaker.lg
+    .lead.text-center
+      There aren't any Feeds here yet.
+      %br
+      %br
+      Click the "+" button in the upper-right corner to add one.
+
   - @feeds.each do |feed|
     %li
       .row

@@ -28,6 +28,6 @@ class Story < ActiveRecord::Base
   end
 
   def self.cache_key
-    "(#{(all.order(updated_at: :asc).last.try(:cache_key) || 'story-nil')}-#{all.size}"
+    "#{(all.order(updated_at: :asc).last.try(:cache_key) || 'story-nil')}-#{all.size}"
   end
 end
