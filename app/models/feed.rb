@@ -1,5 +1,5 @@
 class Feed < ActiveRecord::Base
-  include Common::Uuid, Feeds::Discovery, Feeds::Fetching
+  include Common::Uuid, Feed::Discovery, Feed::Fetching
 
   extend FriendlyId
 

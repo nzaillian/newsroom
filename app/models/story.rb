@@ -1,5 +1,5 @@
 class Story < ActiveRecord::Base
-  include Common::Uuid, Stories::Parsing, Stories::Filtering
+  include Common::Uuid, Story::Parsing, Story::Filtering
 
   extend FriendlyId
 

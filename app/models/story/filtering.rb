@@ -1,4 +1,4 @@
-module Stories
+class Story < ActiveRecord::Base
   module Filtering
     extend ActiveSupport::Concern
 

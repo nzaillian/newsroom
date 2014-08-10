@@ -1,4 +1,4 @@
-module Feeds
+class Feed < ActiveRecord::Base
   module Fetching
     extend ActiveSupport::Concern
 

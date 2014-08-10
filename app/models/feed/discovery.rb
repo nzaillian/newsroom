@@ -1,4 +1,4 @@
-module Feeds
+class Feed < ActiveRecord::Base
   module Discovery
     extend ActiveSupport::Concern
 
