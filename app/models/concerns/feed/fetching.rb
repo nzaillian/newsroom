@@ -17,7 +17,7 @@ class Feed < ActiveRecord::Base
             new_entries_from(raw_feed).each do |entry|
               Story.create_from_raw_feed_entry!(entry, self)
             end
-            update!(status: 'green')
+            update!(last_fetched: Time.now, status: 'green')
           end
         rescue Exception => e
           update!(status: 'red')
