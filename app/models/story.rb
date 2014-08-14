@@ -5,7 +5,7 @@ class Story < ActiveRecord::Base
 
   friendly_id :uuid
 
-  belongs_to :feed
+  belongs_to :feed, touch: true
 
   scope :read, -> { where(is_read: true) }
 
