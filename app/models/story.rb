@@ -3,7 +3,7 @@ class Story < ActiveRecord::Base
 
   extend FriendlyId
 
-  friendly_id :uuid, use: :slugged
+  friendly_id :uuid
 
   belongs_to :feed
 
@@ -29,5 +29,9 @@ class Story < ActiveRecord::Base
 
   def self.cache_key
     "#{(all.order(updated_at: :asc).last.try(:cache_key) || 'story-nil')}-#{all.size}"
+  end
+
+  def to_param
+    uuid
   end
 end

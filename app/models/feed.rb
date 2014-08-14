@@ -3,7 +3,7 @@ class Feed < ActiveRecord::Base
 
   extend FriendlyId
 
-  friendly_id :uuid, use: :slugged
+  friendly_id :uuid
 
   has_many :stories, dependent: :destroy
 
@@ -14,6 +14,10 @@ class Feed < ActiveRecord::Base
   # see app/models/concerns/feed/discovery.rb
   before_save :derive_feed_details, if: ->{ url_changed? }  
 
+  def to_param
+    uuid
+  end  
+
   private
 
   def latest_entry_id
@@ -21,6 +25,6 @@ class Feed < ActiveRecord::Base
   end  
 
   def init
-    self.last_fetched = 1.week.ago if last_fetched.nil?
+    self.last_fetched = 4.months.ago if last_fetched.nil?
   end
 end

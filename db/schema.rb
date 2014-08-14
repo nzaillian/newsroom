@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140809180525) do
+ActiveRecord::Schema.define(version: 20140814164955) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,14 +21,12 @@ ActiveRecord::Schema.define(version: 20140809180525) do
     t.string   "name"
     t.text     "url"
     t.datetime "last_fetched"
-    t.string   "slug"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "status"
   end
 
   add_index "feeds", ["created_at"], name: "index_feeds_on_created_at", using: :btree
-  add_index "feeds", ["slug"], name: "index_feeds_on_slug", using: :btree
   add_index "feeds", ["url"], name: "index_feeds_on_url", using: :btree
   add_index "feeds", ["uuid"], name: "index_feeds_on_uuid", using: :btree
 
@@ -42,7 +40,6 @@ ActiveRecord::Schema.define(version: 20140809180525) do
     t.boolean  "is_read"
     t.boolean  "starred"
     t.boolean  "keep_unread"
-    t.string   "slug"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "entry_id"
@@ -50,7 +47,6 @@ ActiveRecord::Schema.define(version: 20140809180525) do
 
   add_index "stories", ["feed_id"], name: "index_stories_on_feed_id", using: :btree
   add_index "stories", ["published"], name: "index_stories_on_published", using: :btree
-  add_index "stories", ["slug"], name: "index_stories_on_slug", using: :btree
   add_index "stories", ["starred"], name: "index_stories_on_starred", using: :btree
   add_index "stories", ["uuid"], name: "index_stories_on_uuid", using: :btree
 
