@@ -34,7 +34,7 @@ class StoriesController < ApplicationController
   def refresh
     Feed.fetch_all!
 
-    redirect_to stories_path, flash: {notice: "Feeds refreshed"}
+    redirect_to request.referer, flash: {notice: "Feeds refreshed"}
   end
 
   private
