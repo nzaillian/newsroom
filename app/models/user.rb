@@ -14,8 +14,8 @@ class User < ActiveRecord::Base
   end
 
   def self.instance
-    @instance ||= (User.first || User.create!)
-  end  
+    User.first || User.create!
+  end
 
   private
 
