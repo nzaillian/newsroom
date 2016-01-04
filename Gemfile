@@ -16,3 +16,5 @@ gem "tzinfo-data", platforms: [:mswin, :mingw, :jruby]
 gem "middleman-gh-pages"
 
 gem "bootstrap-sass"
+
+gem "font-awesome-sass"
