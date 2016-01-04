@@ -73,4 +73,5 @@ end
 
 activate :deploy do |deploy|
   deploy.deploy_method = :git
+  deploy.strategy = :force_push
 end
